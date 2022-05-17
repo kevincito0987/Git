@@ -1,53 +1,57 @@
-Hola.
-Por ahora hablemos de tu currículum,
-pero primero lo dejaremos intacto.
-Solo nos centraremos en hacerle las preguntas indicadas.
-Algunos comandos que pueden ayudar a la hora de colaborar con proyectos de github muy grandes:
-
-git log --oneline - Muestra el identificador de confirmación y el título de confirmación.
-git log --decorate- Muestra dónde se encuentra el punto de cabeza en el registro.
-git log --stat - Explica el número de líneas que se cambiaron brevemente.
-git log -p- Explica el número de líneas que se cambiaron y muestra que se cambió en el contenido.
-git shortlog - Indica qué confirmaciones ha realizado un usuario, mostrando el usuario y el título de sus confirmaciones.
-git log --graph --oneline --decorate and
-git log --pretty=format:"%cn made a commit %h on the day %cd" - Muestra mensajes personalizados de las confirmaciones.
-git log -3 - Limitamos el número de confirmaciones.
+Hello.
+For now let's talk about your resume,
+but first we will leave it intact.
+We will only focus on asking you the indicated questions.
+Some commands that can help when collaborating with very large github projects:
+git log --oneline - Displays the confirmation ID and confirmation title.
+git log --decorate- Shows where the head point is located in the log.
+git log --stat - Explains the number of lines that were briefly changed.
+git log -p- Explains the number of lines that were changed and shows that it was changed in the content.
+git shortlog - Indicates what confirmations a user has made, showing the user and the title of their confirmations.
+git log --graph --oneline --decorate and git log --pretty=format:"%cn made a commit %h on the day %cd" - Displays custom commit messages.
+git log -3 - We limit the number of confirmations.
 git log --after="2018-1-2" ,
-git log --after="hoy" y
-git log --after="2018-1-2" --before="today" - Se compromete a localizar por fechas.
-git log --author="Name Author" - Confirmaciones hechas por el autor que cumplen exactamente con el nombre.
-git log --grep="INVIE" - Busque confirmaciones que cumplan con lo escrito entre comillas.
-git log --grep="INVIE" -i- Busque confirmaciones compatibles independientemente de las mayúsculas o minúsculas.
-git log – index.html- Busque confirmaciones en un archivo específico.
+git log --after="today" and
+git log --after="2018-1-2" --before="today" - You agree to locate by dates.
+git log --author="Name Author" - Confirmations made by the author that exactly meet the name.
+git log --grep="INVIE" - Look for confirmations that comply with what is written in quotation marks.
+git log --grep="INVIE" -i- Look for supported commits regardless of case.
+git log – index.html- Search for commits in a specific file.
 git log -S "Por contenido"- Busque confirmaciones con el contenido dentro del archivo.
-git log > log.txt - guardar registros en un archivo txt
-Para agregar la última versión a una donde mi grupo trabaja pero ciando es versión en mi repositorio local, uso git clone url.
-Para cuando lo tengo todo, primero uso git add, luego uso git commit y para llevarlos al repositorio grupal uso git push. Pero para traerme una versión del repositorio grupal porque cualquiera hizo un cambio, usé git fetch.
-Pero hay un comando que me une a los dos anteriores y es git pull.
-Si quería hacer una rama para hacer experimentos sin cambiar la versión original usábamos el comando git branch n.rama.
-Y para cambiar de la rama maestra a la otra rama de experimento usamos el comando git checkout n.rama.
-Las claves ssh se utilizan lo que para los hackers no pueden acceder a nuestras publicaciones o archivos secretos.
-Para crear claves ssh usamos el comando: ssh-keygen -t rsa -b 4096 -C "kevinangaritacaamano@gmail.com"
-Para comprobar si el servidor de claves está ejecutando mis claves ssh usamos el comando: $ eval $(ssh-agent -s), y para añadir esta clave en nuestro portátil nos usamos el comando: ssh-add ~/.ssh/id_rsa.
-Para referirme a la casa de instalación git de mi computadora usamos el comando: ~.
-Para saber qué etiquetas tenemos usamos el comando: $ git tag, y para conocer la referencia de esta etiqueta usamos: $ git show-ref --tags, y para enviarlo usamos: $ git push origin --tags. 
-Para eliminar etiquetas de tu ordenador utilizamos: git tag -d n.tag, y para eliminar esta etiqueta od gitlab o github utilizamos: git push origin :refs/tags/n.tag.
-El comando $ git show-branch me cuenta la historia de las ramas y para ver eso con más profundidad usamos: $ git show-branch --all.
-Para agregarme a un proyecto o repositorio que alguien ha creado usamos: git clone url.proyect.
-Para fusionar ramificaciones de los colaboradores, primero traemos todas las ramas con el comando git pull origin n.branch, luego hacemos git status y hacemos lo que hay que hacer y luego fusionamos ramas con el comando git merge n.branch y luego enviamos cambios a nuestro repositorio en gitla o github con el comando git push origin n.branch.
-Si no soy colaborador o propietario del proyecto o depositante debo hacer:
- 1. Para hacer una bifurcación del proyecto, luego lo clonamos con el comando: git clone url y para hacer cambios lo que quiero. Pero si el propietario hace nuevos cambios del repositorio y llego tarde con esos cambios debo usar el comando: git remote -v para saber cuáles son las ramas para buscar y empujar el repositorio, luego para agregar el repositorio configuramos una nueva rama llamada upstread y luego usamos el comando: git remote add upstread url. Así que buscamos las fuentes de información con el comando: git remote -v.
- 2. Debemos traer la información con el comando: git pull upstread master, luego hacemos un commit para ver si hay algo que agregar, luego enviamos estos datos a nuestro repositorio con el comando: git push origin master.
- 3.Creo un servidor y luego clono el repositorio con el comando: git clone url.
- Cómo hacer una bifurcación remota desde la consola de Github.
- Al hacer una bifurcación, Github sabe que se hizo la bifurcación del proyecto, por lo que el colaborador puede hacer una solicitud de extracción desde su propio repositorio.
- Cuando trabajas que existe en diferentes repositorios remotos (normalmente debido a una bifurcación), es muy probable que sea lo que quieres para poder trabajar con ambos repositorios. Para eso, puede generar un control remoto adicional desde la consola.
-git remote agregar <nombre_del_remoto> <url_del_remoto> 
-git remoto aguas arriba https://github.com/freddier/hyperblog.
-Al crear un control remoto adicional, podemos hacer pull desde el nuevo origen. En caso de tener permitidos, podemos hacer fetchand push.
-git pull <remoto> <rama>
-git pull upstream master.
-Este tirón nos trae los cambios del mando a distancia, por lo que estará al día en el proyecto. el flujo de trabajo cambia, a partir de ahora estará trabajando para hacer pull desde upstream y push hasta el origen para pasar a hacer pull request.
-git pull upstream master
-git push origen maestro
-Para ignorar algunos archivos creamos un nuevo archivo que comenzó con .gitignore y todo lo que hay en este archivo será ignorado por git.
+git log > log.txt - guardar registros en un archivo txt.
+If I want to start a repo and then upload it to my Gitlab or Github I do the following:
+ 1. I look for the folder in which the repository will be and when I find it I will start the repository with the command: git int.
+    Then I add the folder and files with the command: git add file or folder.
+    So they will be in stagying and to add them to the local repository I will use the command: git commit -m "message".
+    Then if I make new changes to the files I can add them to staying and the local repository with the command: git commit -am "message".
+    By the time I have it all, I first use git add, then I use git commit and to take them to the group repository I use git push. But to bring me a version of the group repository because anyone made a change, I used git fetch.
+    But there is a command that joins me to the previous two and it is git pull.
+    If I wanted to make a branch to do experiments without changing the original version we used the command git branch n.rama.
+    And to switch from the master branch to the other experiment branch we use the git checkout n.rama command.
+    Ssh keys are used which for hackers cannot access our publications or secret files.
+    To create ssh keys we use the command: ssh-keygen -t rsa -b 4096 -C"kevinangaritacaamano@gmail.com"
+    To check if the key server is running my ssh keys we use the command: $ eval $(ssh-agent -s), and to add this key on our laptop we use the command: ssh-add ~/.ssh/id_rsa.   
+    To refer to the git installation house of my computer we use the command: ~.
+    To know what tags we have we use the command: $ git tag, and to know the reference of this tag we use: $ git show-ref --tags, and to send it we use: $ git push origin --tags. 
+    To remove tags from your computer we use: git tag -d n.tag, and to remove this tag od gitlab or github we use: git push origin :refs/tags/n.tag.
+ 2.To create a new branch with the name that we want with the command: $ git remote add n.branch https://github.com/kevincito0987/Dom.git.
+   To see what this repository has a direction where to do fetch and push with the command: $ git remote -v.
+   To bring me the ultimate version of my repository in Github or Gitlab to my local repository we use the command: git pull n.branch master.
+   Then to change the direction of the repository in my local to change it by SSH keys with the command: $ git remote set-url origin git@github.com:kevincito0987/Dom.git.
+   If I want send the changes that i had made in my local repository following previous steps we use the command: git push n.branch master.
+   To add the latest version to one where my group works but is versioning in my local repository, I use git clone url.
+   The $git show-branch command tells me the history of the branches and to see that in more depth we use: $git show-branch --all.
+   To add me to a project or repository that someone has created we use: git clone url.project.
+   To merge branches of collaborators, we first bring all branches with the git pull origin n.branch command, then we do git status and do what needs to be done and then merge branches with the git merge n.branch command and then send changes to our repository in gitlab or github with the git push origin n.branch.
+If I am not a collaborator or owner of the project or depositor I must do:
+ 1. To make a fork of the project, then clone it with the command: git clone url and to make changes what I want. But if the owner makes new changes to the repository and I am late with those changes I must use the command: git remote -v to know what are the branches to search and push the repository, then to add the repository we configure a new branch called upstream and then we use the command: git remote add upstread url. So we look for the sources of information with the command: git remote -v.
+ 2. We must bring the information with the command: git pull upstread master, then we make a commit to see if there is anything to add, then we send this data to our repository with the command: git push origin master.
+3.I create a server and then clone the repository with the command: git clone url.
+ How to make a remote fork from the Github console.
+  When you make a fork, Github knows that the project fork was made, so the contributor can make a pull request from their own repository.
+  When you work that exists in different remote repositories (usually due to a fork), it is very likely that it is what you want to be able to work with both repositories. For that, you can generate an additional remote control from the console.
+  git remote add <nombre_del_remoto> <url_del_remoto> git remote upstream https://github.com/freddier/hyperblog.
+  By creating an additional remote control, we can pull from the new source. In case of being allowed, we can do fetchand push.
+  git pull <remoto> <rama> git pull upstream master.This pull brings us the changes of the remote control, so you will be up to date on the project. the workflow changes, from now on you will be working to pull from upstream and push to the source to move to pull request.
+  git pull upstream master, git push master source.
+To ignore some files we create a new file that started with .gitignore and everything in this file will be ignored by git.
