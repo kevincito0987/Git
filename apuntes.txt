@@ -1,0 +1,53 @@
+Hola.
+Por ahora hablemos de tu currículum,
+pero primero lo dejaremos intacto.
+Solo nos centraremos en hacerle las preguntas indicadas.
+Algunos comandos que pueden ayudar a la hora de colaborar con proyectos de github muy grandes:
+
+git log --oneline - Muestra el identificador de confirmación y el título de confirmación.
+git log --decorate- Muestra dónde se encuentra el punto de cabeza en el registro.
+git log --stat - Explica el número de líneas que se cambiaron brevemente.
+git log -p- Explica el número de líneas que se cambiaron y muestra que se cambió en el contenido.
+git shortlog - Indica qué confirmaciones ha realizado un usuario, mostrando el usuario y el título de sus confirmaciones.
+git log --graph --oneline --decorate and
+git log --pretty=format:"%cn made a commit %h on the day %cd" - Muestra mensajes personalizados de las confirmaciones.
+git log -3 - Limitamos el número de confirmaciones.
+git log --after="2018-1-2" ,
+git log --after="hoy" y
+git log --after="2018-1-2" --before="today" - Se compromete a localizar por fechas.
+git log --author="Name Author" - Confirmaciones hechas por el autor que cumplen exactamente con el nombre.
+git log --grep="INVIE" - Busque confirmaciones que cumplan con lo escrito entre comillas.
+git log --grep="INVIE" -i- Busque confirmaciones compatibles independientemente de las mayúsculas o minúsculas.
+git log – index.html- Busque confirmaciones en un archivo específico.
+git log -S "Por contenido"- Busque confirmaciones con el contenido dentro del archivo.
+git log > log.txt - guardar registros en un archivo txt
+Para agregar la última versión a una donde mi grupo trabaja pero ciando es versión en mi repositorio local, uso git clone url.
+Para cuando lo tengo todo, primero uso git add, luego uso git commit y para llevarlos al repositorio grupal uso git push. Pero para traerme una versión del repositorio grupal porque cualquiera hizo un cambio, usé git fetch.
+Pero hay un comando que me une a los dos anteriores y es git pull.
+Si quería hacer una rama para hacer experimentos sin cambiar la versión original usábamos el comando git branch n.rama.
+Y para cambiar de la rama maestra a la otra rama de experimento usamos el comando git checkout n.rama.
+Las claves ssh se utilizan lo que para los hackers no pueden acceder a nuestras publicaciones o archivos secretos.
+Para crear claves ssh usamos el comando: ssh-keygen -t rsa -b 4096 -C "kevinangaritacaamano@gmail.com"
+Para comprobar si el servidor de claves está ejecutando mis claves ssh usamos el comando: $ eval $(ssh-agent -s), y para añadir esta clave en nuestro portátil nos usamos el comando: ssh-add ~/.ssh/id_rsa.
+Para referirme a la casa de instalación git de mi computadora usamos el comando: ~.
+Para saber qué etiquetas tenemos usamos el comando: $ git tag, y para conocer la referencia de esta etiqueta usamos: $ git show-ref --tags, y para enviarlo usamos: $ git push origin --tags. 
+Para eliminar etiquetas de tu ordenador utilizamos: git tag -d n.tag, y para eliminar esta etiqueta od gitlab o github utilizamos: git push origin :refs/tags/n.tag.
+El comando $ git show-branch me cuenta la historia de las ramas y para ver eso con más profundidad usamos: $ git show-branch --all.
+Para agregarme a un proyecto o repositorio que alguien ha creado usamos: git clone url.proyect.
+Para fusionar ramificaciones de los colaboradores, primero traemos todas las ramas con el comando git pull origin n.branch, luego hacemos git status y hacemos lo que hay que hacer y luego fusionamos ramas con el comando git merge n.branch y luego enviamos cambios a nuestro repositorio en gitla o github con el comando git push origin n.branch.
+Si no soy colaborador o propietario del proyecto o depositante debo hacer:
+ 1. Para hacer una bifurcación del proyecto, luego lo clonamos con el comando: git clone url y para hacer cambios lo que quiero. Pero si el propietario hace nuevos cambios del repositorio y llego tarde con esos cambios debo usar el comando: git remote -v para saber cuáles son las ramas para buscar y empujar el repositorio, luego para agregar el repositorio configuramos una nueva rama llamada upstread y luego usamos el comando: git remote add upstread url. Así que buscamos las fuentes de información con el comando: git remote -v.
+ 2. Debemos traer la información con el comando: git pull upstread master, luego hacemos un commit para ver si hay algo que agregar, luego enviamos estos datos a nuestro repositorio con el comando: git push origin master.
+ 3.Creo un servidor y luego clono el repositorio con el comando: git clone url.
+ Cómo hacer una bifurcación remota desde la consola de Github.
+ Al hacer una bifurcación, Github sabe que se hizo la bifurcación del proyecto, por lo que el colaborador puede hacer una solicitud de extracción desde su propio repositorio.
+ Cuando trabajas que existe en diferentes repositorios remotos (normalmente debido a una bifurcación), es muy probable que sea lo que quieres para poder trabajar con ambos repositorios. Para eso, puede generar un control remoto adicional desde la consola.
+git remote agregar <nombre_del_remoto> <url_del_remoto> 
+git remoto aguas arriba https://github.com/freddier/hyperblog.
+Al crear un control remoto adicional, podemos hacer pull desde el nuevo origen. En caso de tener permitidos, podemos hacer fetchand push.
+git pull <remoto> <rama>
+git pull upstream master.
+Este tirón nos trae los cambios del mando a distancia, por lo que estará al día en el proyecto. el flujo de trabajo cambia, a partir de ahora estará trabajando para hacer pull desde upstream y push hasta el origen para pasar a hacer pull request.
+git pull upstream master
+git push origen maestro
+Para ignorar algunos archivos creamos un nuevo archivo que comenzó con .gitignore y todo lo que hay en este archivo será ignorado por git.
