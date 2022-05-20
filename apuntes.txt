@@ -55,4 +55,16 @@ If I am not a collaborator or owner of the project or depositor I must do:
   git pull <remoto> <rama> git pull upstream master.This pull brings us the changes of the remote control, so you will be up to date on the project. the workflow changes, from now on you will be working to pull from upstream and push to the source to move to pull request.
   git pull upstream master, git push master source.
 To ignore some files we create a new file that started with .gitignore and everything in this file will be ignored by git.
-In the branch in wich was the previous version  if (de casualidad) by chance i have a change in a branch but if i want to go back before i made those changes i would use the comand: git stash and this command save the previous version in a (temporal) temporary place and to see that place i use the command: git stash list, and to add this changes to another branch i use the command: git stash branch n.branch, then i change to the branch master and excecute the command: git stash pop to add the new changes and follow with the process.
+The command: git stash, is used to save the ultimate version of a branch before to send it to a commit.
+In the branch in wich was the previous version  if (de casualidad) by chance i have a change in a branch but if i want to go back before i made those changes i would use the comand: git stash and this command save the previous version in a (temporal) temporary place and to see that place i use the command: git stash list, and to add this changes to another branch i use the command or save chenges and follow to doing a new changes in a new branch: git stash branch n.branch, then i change to the branch master and excecute the command: git stash pop to add the new changes and follow with the process.
+And to delete stashes i use the command: git stash drop.
+To delete some files what i don't want to go to the repository i use the command: git clean, and i can choose in these:
+ The command: git clean --dry-run, this command is used to simulate the files that i gonna to delete.
+ The command: git clean -f, is used to delete files that i haven't saved.
+ The command: git clean -df, is used to delete folders that i want delete and that it hasn't been saved.
+The command: git cherry-pick commit.number, is used to bring me a commit made in other branch to the branch master or main.
+If by chance i delete all unintentionally and i don't remember what i do; there is a command that help me to remember all changes what i do: git reflog; then i search the ultimate HEAD in wich all was fine, it is: git reset HEAD(in wich all was fine).
+To elimite somethings i use the command:
+ git reset --SOFT to keep everything what i have in staying in staying.
+ git reset --HARD to eliminate all.
+Then i comb both commands so: git reset --HARD HEAD.
