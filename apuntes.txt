@@ -69,7 +69,7 @@ To elimite somethings i use the command:
  git reset --HARD to eliminate all.
 Then i comb both commands so: git reset --HARD HEAD.
 If i forget someting but i do the commit without changes what i forget to do, i can do this:
- First i do changes in my code editor and i save it, then i add it in git with the command: git commit n.file, then i excecute the command: git commit --amend and this command add me the changes what i do to the ultimate commit that i do.
+ First i do changes in my code editor and i save it, then i add it in git with the command: git add n.file, then i excecute the command: git commit --amend and this command add me the changes what i do to the ultimate commit that i do.
 If i would want remember how many times i use something in my proyect i would use:
 git grep color --> use the word color.
 git grep la --> where i use the sword la.
@@ -91,3 +91,4 @@ If i want to see how many commands i excecute how who is which do commits or ano
  git branch -r = all remote branches are displayed. 
  git branch -a = all branches are displayed both local and remote.
  I can to add this command in a alias so: git config --global alias stats="shortlog -sn".
+My next course then react is jenhins in platzi.
