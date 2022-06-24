@@ -91,4 +91,5 @@ If i want to see how many commands i excecute how who is which do commits or ano
  git branch -r = all remote branches are displayed. 
  git branch -a = all branches are displayed both local and remote.
  I can to add this command in a alias so: git config --global alias stats="shortlog -sn".
+If i have a problems to do push for unrelated histories i can use this command: git push x y --allow unrelated-histories.
 My next course then react is jenhins in platzi.
